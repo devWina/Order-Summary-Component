@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+:root {
+  // Primary
+  --Pale-blue: hsl(225, 100%, 94%);
+  --Bright-blue: hsl(245, 75%, 52%);
+  --Bright-light-blue: hsl(245, 69%, 60%);
+  --white: #fff;
+
+  // Neutral
+  --Very-pale-blue: hsl(225, 100%, 98%);
+  --Desaturated-blue: hsl(224, 23%, 55%);
+  --Dark-blue: hsl(223, 47%, 23%);
+
+  // Font
+  --font-Red-Hat: "Red Hat Display";
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+.fw700 {
+  font-weight: 700;
+}
+.fw900 {
+  font-weight: 900;
+}
+
+.container {
+  background-color: var(--Pale-blue);
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .main-bg {
+    position: absolute;
+    width: 100vw;
+    height: 60vh;
+    top: 0;
+    left: 0;
+  }
+}
+
+.overlay {
+  position: absolute;
+  width: 23%;
+
+  main {
+    font-family: var(--font-Red-Hat);
+    border-radius: 20px;
+    background-color: var(--white);
+
+    .hero-bg {
+      background-image: url("/images/illustration-hero.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 150px;
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px;
+    }
+
+    .body {
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+
+      .intro {
+        .hd {
+          margin-top: 20px;
+          font-size: 1.2rem;
+          text-align: center;
+          color: var(--Dark-blue);
+        }
+
+        .paragraph {
+          margin-top: 10px;
+          margin-bottom: 20px;
+          font-size: 0.8rem;
+          padding: 0 20px;
+          color: var(--Desaturated-blue);
+          text-align: center;
+        }
+      }
+      .subscription {
+        width: 82%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+        border-radius: 10px;
+        gap: 15px;
+        margin: 0 auto 20px auto;
+        background-color: var(--Very-pale-blue);
+
+        img {
+          width: 32px;
+          height: 32px;
+        }
+
+        .sub-description {
+          display: flex;
+          flex-direction: column;
+
+          .plan {
+            font-size: 0.8rem;
+            color: var(--Dark-blue);
+          }
+          .price {
+            font-size: 0.8rem;
+            color: var(--Desaturated-blue);
+          }
+        }
+
+        .change {
+          font-size: 0.65rem;
+          margin-left: 40px;
+          color: var(--Bright-blue);
+        }
+      }
+
+      .btn {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        margin: 0 auto;
+
+        .payment {
+          width: 82%;
+          background-color: var(--Bright-blue);
+          color: var(--white);
+          border: none;
+          border-radius: 8px;
+          font-size: 0.7rem;
+          padding: 9px 0;
+
+          transition: all 0.15s ease-in-out;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:active {
+            cursor: pointer;
+            background-color: var(--Bright-light-blue);
+          }
+        }
+        .cancel {
+          margin-top: 10px;
+          margin-bottom: 15px;
+          width: 82%;
+          background: transparent;
+          color: var(--Desaturated-blue);
+          border: none;
+          border-radius: 8px;
+          font-size: 0.7rem;
+          padding: 9px 0;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:active {
+            cursor: pointer;
+            color: var(--Dark-blue);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 85%;
+  }
+}
